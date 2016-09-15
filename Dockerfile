@@ -9,10 +9,8 @@ RUN yum install --setopt=tsflags=nodocs -y git && \
     adduser yeoman && \
     echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# LABEL RUN "docker run --rm -ti -p 9000:9000 -v $(pwd)/myproject:/home/yeoman:Z goern/yeoman-centos7 grunt serve"
-
 USER yeoman
 ENV HOME /home/yeoman
 WORKDIR /home/yeoman
 
-EXPOSE 9000
+EXPOSE 9000 35729
